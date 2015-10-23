@@ -2,6 +2,9 @@
 #import "UniversalDetector.h"
 #undef uint32
 
+
+NSString * const	UniversalDetectorUseMacRomanHeuristic			= @"UniversalDetectorUseMacRomanHeuristic";
+
 #include "nscore.h"
 #include "nsUniversalDetector.h"
 #include "nsCharSetProber.h"
@@ -93,6 +96,7 @@ public:
 @implementation UniversalDetector
 {
 	wrappedUniversalDetector *detectorPtr;
+	BOOL possiblyMacRoman;
 }
 
 @synthesize MIMECharset = charsetName;
@@ -156,10 +160,40 @@ public:
 
 -(void)analyzeBytes:(const char *)data length:(int)len
 {
-	if (detectorPtr->done()) {
-		return;
-	}
 	detectorPtr->HandleData(data, len);
+	
+	BOOL useMacRomanHeuristic = [[NSUserDefaults standardUserDefaults] boolForKey:UniversalDetectorUseMacRomanHeuristic];
+
+	if (useMacRomanHeuristic) {
+		// Search for a carriage return (cr) without a following newline.
+		// We do this to determine, if the data could possibly be MacRoman.
+		const size_t searchWindowSize = 4096;
+		char *crPtr = memchr(data, '\r', MIN(len, searchWindowSize));
+		if (crPtr == NULL) {
+			possiblyMacRoman = NO;
+		}
+		else {
+			const int lastIndex = len - 1;
+			int crIndex = (crPtr - data);
+			
+			// Check, if we are at least one byte before the end.
+			if (crIndex < lastIndex) {
+				if (data[crIndex+1] == '\n') {
+					possiblyMacRoman = NO;
+				}
+				else {
+					possiblyMacRoman = YES;
+				}
+			}
+			else {
+				possiblyMacRoman = YES;
+			}
+		}
+	}
+	else {
+		possiblyMacRoman = NO;
+	}
+	
 	charsetName=nil;
 }
 
@@ -201,8 +235,18 @@ public:
 	// UniversalDetector detects CP949 but returns "EUC-KR" because CP949 lacks an IANA name.
 	// Kludge to make strings decode properly anyway.
 	if(cfenc==kCFStringEncodingEUC_KR) cfenc=kCFStringEncodingDOSKorean;
+	// Something similar happens with "Shift_JIS".
+	if(cfenc==kCFStringEncodingShiftJIS) cfenc=kCFStringEncodingDOSJapanese;
 
-	return CFStringConvertEncodingToNSStringEncoding(cfenc);
+	NSStringEncoding encoding = CFStringConvertEncodingToNSStringEncoding(cfenc);
+	
+	if (possiblyMacRoman &&
+		(encoding == NSWindowsCP1252StringEncoding ||
+		 encoding == NSShiftJISStringEncoding)) {
+			encoding = NSMacOSRomanStringEncoding;
+	}
+	
+	return encoding;
 }
 
 -(float)confidence
