@@ -42,10 +42,20 @@
 		3D81E2B318C5F92C00834BCA /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D81E2B218C5F92C00834BCA /* AppKit.framework */; };
 		3D8275CD16B943C100061FD9 /* nsMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D8275CB16B943C100061FD9 /* nsMemory.h */; };
 		3D8275D616B946F100061FD9 /* nsDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D8275D516B946F100061FD9 /* nsDebug.h */; };
+		5518C6D71BDAFDCC00D50302 /* UniversalDetectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5518C6D61BDAFDCC00D50302 /* UniversalDetectorTests.m */; };
+		5518C6D91BDAFDCC00D50302 /* UniversalDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* UniversalDetector.framework */; };
+		5518C6E01BDAFE5B00D50302 /* UniversalDetectorSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5518C6DF1BDAFE5B00D50302 /* UniversalDetectorSwiftTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		1B0DDCBA0A2D0C490009B697 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = UniversalDetector;
+		};
+		5518C6DA1BDAFDCC00D50302 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
@@ -122,6 +132,10 @@
 		3D81E2B218C5F92C00834BCA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		3D8275CB16B943C100061FD9 /* nsMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nsMemory.h; sourceTree = "<group>"; };
 		3D8275D516B946F100061FD9 /* nsDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nsDebug.h; sourceTree = "<group>"; };
+		5518C6D41BDAFDCC00D50302 /* UniversalDetectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalDetectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5518C6D61BDAFDCC00D50302 /* UniversalDetectorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UniversalDetectorTests.m; sourceTree = "<group>"; };
+		5518C6D81BDAFDCC00D50302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5518C6DF1BDAFE5B00D50302 /* UniversalDetectorSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalDetectorSwiftTests.swift; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* UniversalDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UniversalDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,6 +148,14 @@
 				3D81E2B318C5F92C00834BCA /* AppKit.framework in Frameworks */,
 				3D724E4E11741AEE00CD3CBD /* Foundation.framework in Frameworks */,
 				1B0DDCB30A2D0B2E0009B697 /* UniversalDetector.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5518C6D11BDAFDCC00D50302 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5518C6D91BDAFDCC00D50302 /* UniversalDetector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +175,7 @@
 			children = (
 				8DC2EF5B0486A6940098B216 /* UniversalDetector.framework */,
 				1B0DDCAB0A2D0AD10009B697 /* DetectorTest */,
+				5518C6D41BDAFDCC00D50302 /* UniversalDetectorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,19 +190,20 @@
 				1B0DDCAD0A2D0AFD0009B697 /* DetectorTest */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
-				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				5518C6D51BDAFDCC00D50302 /* UniversalDetectorTests */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = UniversalCharDet;
 			sourceTree = "<group>";
 		};
-		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
 				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
 			);
-			name = "External Frameworks and Libraries";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		089C1665FE841158C02AAC07 /* Resources */ = {
@@ -356,6 +380,16 @@
 			path = glue;
 			sourceTree = "<group>";
 		};
+		5518C6D51BDAFDCC00D50302 /* UniversalDetectorTests */ = {
+			isa = PBXGroup;
+			children = (
+				5518C6D61BDAFDCC00D50302 /* UniversalDetectorTests.m */,
+				5518C6DF1BDAFE5B00D50302 /* UniversalDetectorSwiftTests.swift */,
+				5518C6D81BDAFDCC00D50302 /* Info.plist */,
+			);
+			path = UniversalDetectorTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -389,6 +423,24 @@
 			productReference = 1B0DDCAB0A2D0AD10009B697 /* DetectorTest */;
 			productType = "com.apple.product-type.tool";
 		};
+		5518C6D31BDAFDCC00D50302 /* UniversalDetectorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5518C6DE1BDAFDCC00D50302 /* Build configuration list for PBXNativeTarget "UniversalDetectorTests" */;
+			buildPhases = (
+				5518C6D01BDAFDCC00D50302 /* Sources */,
+				5518C6D11BDAFDCC00D50302 /* Frameworks */,
+				5518C6D21BDAFDCC00D50302 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5518C6DB1BDAFDCC00D50302 /* PBXTargetDependency */,
+			);
+			name = UniversalDetectorTests;
+			productName = UniversalDetectorTests;
+			productReference = 5518C6D41BDAFDCC00D50302 /* UniversalDetectorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8DC2EF4F0486A6940098B216 /* UniversalDetector */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "UniversalDetector" */;
@@ -415,6 +467,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0710;
+				TargetAttributes = {
+					5518C6D31BDAFDCC00D50302 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "UniversalDetector" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -433,11 +490,19 @@
 			targets = (
 				8DC2EF4F0486A6940098B216 /* UniversalDetector */,
 				1B0DDCAA0A2D0AD10009B697 /* DetectorTest */,
+				5518C6D31BDAFDCC00D50302 /* UniversalDetectorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5518C6D21BDAFDCC00D50302 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF520486A6940098B216 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,6 +518,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B0DDCB20A2D0B240009B697 /* DetectorTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5518C6D01BDAFDCC00D50302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5518C6D71BDAFDCC00D50302 /* UniversalDetectorTests.m in Sources */,
+				5518C6E01BDAFE5B00D50302 /* UniversalDetectorSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +571,11 @@
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* UniversalDetector */;
 			targetProxy = 1B0DDCBA0A2D0C490009B697 /* PBXContainerItemProxy */;
+		};
+		5518C6DB1BDAFDCC00D50302 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* UniversalDetector */;
+			targetProxy = 5518C6DA1BDAFDCC00D50302 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -646,6 +725,61 @@
 			};
 			name = Release;
 		};
+		5518C6DC1BDAFDCC00D50302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = UniversalDetectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.maddthesane.UniversalDetectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5518C6DD1BDAFDCC00D50302 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = UniversalDetectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.maddthesane.UniversalDetectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -675,6 +809,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		5518C6DE1BDAFDCC00D50302 /* Build configuration list for PBXNativeTarget "UniversalDetectorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5518C6DC1BDAFDCC00D50302 /* Debug */,
+				5518C6DD1BDAFDCC00D50302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
