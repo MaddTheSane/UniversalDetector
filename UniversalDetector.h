@@ -14,6 +14,7 @@ extern NSString * const	UniversalDetectorUseMacRomanHeuristic;
 -(instancetype)init NS_DESIGNATED_INITIALIZER;
 
 -(void)analyzeContentsOfFile:(NSString *)path;
+-(void)analyzeContentsOfURL:(NSURL *)url;
 -(void)analyzeData:(NSData *)data;
 -(void)analyzeBytes:(const char *)data length:(int)len;
 -(void)reset;

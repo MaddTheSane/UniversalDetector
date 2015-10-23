@@ -111,7 +111,7 @@ public:
 {
 	static NSArray *array=nil;
 	
-	if(!array) array=[[NSArray alloc] initWithObjects:
+	if(!array) array=@[
 					  @"UTF-8",@"UTF-16BE",@"UTF-16LE",@"UTF-32BE",@"UTF-32LE",
 					  @"ISO-8859-2",@"ISO-8859-5",@"ISO-8859-7",@"ISO-8859-8",@"ISO-8859-8-I",
 					  @"windows-1250",@"windows-1251",@"windows-1252",@"windows-1253",@"windows-1255",
@@ -120,13 +120,13 @@ public:
 					  @"Big5",@"GB2312",@"HZ-GB-2312",@"gb18030",@"GB18030",
 					  @"IBM855",@"IBM866",@"TIS-620",@"X-ISO-10646-UCS-4-2143",@"X-ISO-10646-UCS-4-3412",
 					  @"x-mac-cyrillic",@"x-mac-hebrew",
-					  nil];
+					  ];
 	
 	return array;
 }
 
 
--(id)init
+-(instancetype)init
 {
 	self = [super init];
 	
@@ -144,13 +144,18 @@ public:
 	delete detectorPtr;
 }
 
+-(void)analyzeContentsOfURL:(NSURL *)url
+{
+	NSData *data = [[NSData alloc] initWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:NULL];
+	
+	if (data) {
+		[self analyzeData:data];
+	}
+}
+
 -(void)analyzeContentsOfFile:(NSString *)path
 {
-	NSData *data = [[NSData alloc] initWithContentsOfMappedFile:path];
-
-	if (data) {
-		[self analyzeBytes:(const char *)[data bytes] length:(int)[data length]];
-	}
+	[self analyzeContentsOfURL:[NSURL fileURLWithPath:path]];
 }
 
 -(void)analyzeData:(NSData *)data
@@ -219,7 +224,7 @@ public:
 	{
 		const char *cstr=detectorPtr->charset(confidence);
 		if(!cstr) return nil;
-		charsetName=[[NSString alloc] initWithUTF8String:cstr];
+		charsetName=@(cstr);
 	}
 	return charsetName;
 }
@@ -229,7 +234,7 @@ public:
 	NSString *mimecharset=[self MIMECharset];
 	if(!mimecharset) return 0;
 
-	CFStringEncoding cfenc=CFStringConvertIANACharSetNameToEncoding((CFStringRef)mimecharset);
+	CFStringEncoding cfenc=CFStringConvertIANACharSetNameToEncoding((__bridge CFStringRef)mimecharset);
 	if(cfenc==kCFStringEncodingInvalidId) return 0;
 
 	// UniversalDetector detects CP949 but returns "EUC-KR" because CP949 lacks an IANA name.

@@ -26,6 +26,7 @@ int main(int argc,char **argv)
 		
 		if (data == nil) {
 			NSLog(@"%@", error);
+			[detector release];
 			continue;
 		}
 		
@@ -41,6 +42,7 @@ int main(int argc,char **argv)
 		
 		if (str) {
 			printf("%s\n\n", [str UTF8String]);
+			[detector release];
 			continue;
 		}
 
@@ -56,19 +58,20 @@ int main(int argc,char **argv)
 			// UniversalDetector does not differentiate between Windows Latin 1 and Mac Roman
 			// while AppKit has an apparent Mac Roman bias.
 			NSAttributedString *text = [[NSAttributedString alloc] initWithData:data
-																		options:nil
+																		options:@{}
 															 documentAttributes:&documentAttributes
 																		  error:&error];
 			
 			if (text == nil) {
 				NSLog(@"%@", error);
+				[detector release];
 				continue;
 			}
 			else {
 				[text release];
 				
 				NSNumber *encodingNumber = documentAttributes[NSCharacterEncodingDocumentAttribute];
-				appKitEncoding = [encodingNumber intValue];
+				appKitEncoding = [encodingNumber unsignedIntegerValue];
 			}
 		}
 		
