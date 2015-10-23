@@ -168,13 +168,13 @@ public:
 		// Search for a carriage return (cr) without a following newline.
 		// We do this to determine, if the data could possibly be MacRoman.
 		const size_t searchWindowSize = 4096;
-		char *crPtr = memchr(data, '\r', MIN(len, searchWindowSize));
+		char *crPtr = (char*)memchr(data, '\r', MIN(len, searchWindowSize));
 		if (crPtr == NULL) {
 			possiblyMacRoman = NO;
 		}
 		else {
 			const int lastIndex = len - 1;
-			int crIndex = (crPtr - data);
+			size_t crIndex = (crPtr - data);
 			
 			// Check, if we are at least one byte before the end.
 			if (crIndex < lastIndex) {
