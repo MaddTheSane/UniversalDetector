@@ -2,8 +2,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-// You can enable this heuristic by setting the BOOL with that key in NSUserDefaults -standardUserDefaults to YES.
-// In this case, only -encoding wll be valid and -MIMECharset will be invalid.
+/// You can enable this heuristic by setting the BOOL with that key in NSUserDefaults -standardUserDefaults to YES.
+/// In this case, only -encoding wll be valid and -MIMECharset will be invalid.
 extern NSString * const	UniversalDetectorUseMacRomanHeuristic;
 
 @interface UniversalDetector:NSObject

@@ -1,0 +1,8 @@
+#  UniversalDetector.exp
+#  UniversalDetector
+#
+#  Created by C.W. Betts on 5/20/16.
+#
+
+_UniversalDetectorUseMacRomanHeuristic
+.objc_class_name_UniversalDetector
