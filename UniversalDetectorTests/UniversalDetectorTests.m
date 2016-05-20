@@ -32,4 +32,12 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
+- (void)testASCII{
+	const char * asciiStr = "Hello, this is an ASCII string!";
+	[_detector analyzeBytes:asciiStr length:(int)strlen(asciiStr)];
+	
+	XCTAssertEqual(NSUTF8StringEncoding, _detector.encoding);
+	XCTAssertEqual(1.0, _detector.confidence);
+}
+
 @end
