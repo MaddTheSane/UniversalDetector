@@ -9,12 +9,10 @@ NSString * const	UniversalDetectorUseMacRomanHeuristic			= @"UniversalDetectorUs
 #include "nsUniversalDetector.h"
 #include "nsCharSetProber.h"
 
-// You are welcome to fix this ObjC wrapper to allow initializing nsUniversalDetector with a non-zero value for aLanguageFilter!
-
 class wrappedUniversalDetector:public nsUniversalDetector
 {
 public:
-	wrappedUniversalDetector():nsUniversalDetector(NS_FILTER_ALL) {}
+	wrappedUniversalDetector(uint32_t aLanguageFilter = NS_FILTER_ALL):nsUniversalDetector(aLanguageFilter) {}
 	
 	void Report(const char* aCharset) {}
 	
@@ -91,6 +89,8 @@ public:
 	 */
 	
 	void reset() { Reset(); }
+	
+	uint32_t languageFilter() { return mLanguageFilter; }
 };
 
 @implementation UniversalDetector
@@ -105,6 +105,11 @@ public:
 +(instancetype)detector
 {
 	return [[self alloc] init];
+}
+
++(instancetype)detectorWithFilter:(UDLanguageFilter)aFilter
+{
+	return [[self alloc] initWithFilter:aFilter];
 }
 
 +(NSArray *)possibleMIMECharsets
@@ -125,18 +130,19 @@ public:
 	return array;
 }
 
-
--(instancetype)init
+-(instancetype)initWithFilter:(UDLanguageFilter)aFilter
 {
-	self = [super init];
-	
-	if(self)
-	{
-		detectorPtr = new wrappedUniversalDetector();
+	if (self = [super init]) {
+		detectorPtr = new wrappedUniversalDetector(aFilter);
 		charsetName = nil;
 		confidence  = 0;
 	}
 	return self;
+}
+
+-(instancetype)init
+{
+	return self = [self initWithFilter:UDLanguageAll];
 }
 
 -(void)dealloc
@@ -258,6 +264,11 @@ public:
 {
 	if(!charsetName) [self MIMECharset];
 	return confidence;
+}
+
+- (UDLanguageFilter)languageFilter
+{
+	return detectorPtr->languageFilter();
 }
 
 @end
