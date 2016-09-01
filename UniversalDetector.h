@@ -24,9 +24,12 @@ typedef NS_OPTIONS(signed char, UDLanguageFilter) {
 
 @interface UniversalDetector:NSObject
 
-+(instancetype)detector;
-+(instancetype)detectorWithFilter:(UDLanguageFilter)aFilter;
++(instancetype)detector NS_SWIFT_UNAVAILABLE("Use UniversalDetector() instead");
++(instancetype)detectorWithFilter:(UDLanguageFilter)aFilter NS_SWIFT_UNAVAILABLE("Use UniversalDetector(filter:) instead");
 +(NSArray<NSString*> *)possibleMIMECharsets;
+#if __has_feature(objc_class_property)
+@property (class, readonly, copy) NSArray<NSString*> *possibleMIMECharsets;
+#endif
 
 -(instancetype)init;
 -(instancetype)initWithFilter:(UDLanguageFilter)aFilter NS_DESIGNATED_INITIALIZER;
