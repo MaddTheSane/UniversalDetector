@@ -148,6 +148,7 @@ public:
 -(void)dealloc
 {
 	delete detectorPtr;
+	detectorPtr = nullptr;
 }
 
 -(void)analyzeContentsOfURL:(NSURL *)url
