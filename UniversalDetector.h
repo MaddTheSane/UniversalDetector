@@ -23,6 +23,14 @@ typedef NS_OPTIONS(signed char, UDLanguageFilter) {
 };
 
 @interface UniversalDetector:NSObject
+#if __i386__
+{
+	void *detectorPtr;
+	BOOL possiblyMacRoman;
+	float confidence;
+	NSString *charsetName;
+}
+#endif
 
 +(instancetype)detector NS_SWIFT_UNAVAILABLE("Use UniversalDetector() instead");
 +(instancetype)detectorWithFilter:(UDLanguageFilter)aFilter NS_SWIFT_UNAVAILABLE("Use UniversalDetector(filter:) instead");

@@ -94,10 +94,13 @@ public:
 };
 
 @implementation UniversalDetector
+#if !__i386__
 {
 	wrappedUniversalDetector *detectorPtr;
 	BOOL possiblyMacRoman;
 }
+#endif
+
 
 @synthesize MIMECharset = charsetName;
 @synthesize confidence;
@@ -147,7 +150,7 @@ public:
 
 -(void)dealloc
 {
-	delete detectorPtr;
+	delete ((wrappedUniversalDetector*)detectorPtr);
 	detectorPtr = nullptr;
 }
 
@@ -172,7 +175,7 @@ public:
 
 -(void)analyzeBytes:(const char *)data length:(int)len
 {
-	detectorPtr->HandleData(data, len);
+	((wrappedUniversalDetector*)detectorPtr)->HandleData(data, len);
 	
 	BOOL useMacRomanHeuristic = [[NSUserDefaults standardUserDefaults] boolForKey:UniversalDetectorUseMacRomanHeuristic];
 
@@ -211,12 +214,12 @@ public:
 
 -(void)reset
 {
-	detectorPtr->reset();
+	((wrappedUniversalDetector*)detectorPtr)->reset();
 }
 
 -(BOOL)isDone
 {
-	return detectorPtr->done();
+	return ((wrappedUniversalDetector*)detectorPtr)->done();
 }
 
 -(BOOL)done
@@ -229,7 +232,7 @@ public:
 {
 	if(!charsetName)
 	{
-		const char *cstr=detectorPtr->charset(confidence);
+		const char *cstr=((wrappedUniversalDetector*)detectorPtr)->charset(confidence);
 		if(!cstr) return nil;
 		charsetName=@(cstr);
 	}
@@ -269,7 +272,7 @@ public:
 
 - (UDLanguageFilter)languageFilter
 {
-	return detectorPtr->languageFilter();
+	return ((wrappedUniversalDetector*)detectorPtr)->languageFilter();
 }
 
 @end
