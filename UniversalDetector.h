@@ -42,7 +42,7 @@ typedef NS_OPTIONS(signed char, UDLanguageFilter) {
 
 @property (nonatomic, readonly, getter=isDone) BOOL done;
 @property (nonatomic, copy, readonly, nullable) NSString *MIMECharset;
-@property (nonatomic, readonly) NSStringEncoding encoding;
+@property (nonatomic, readonly) NSStringEncoding encoding NS_REFINED_FOR_SWIFT;
 @property (nonatomic, readonly) float confidence;
 @property (nonatomic, readonly) UDLanguageFilter languageFilter;
 
