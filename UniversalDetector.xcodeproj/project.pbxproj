@@ -93,6 +93,13 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = UniversalDetector;
 		};
+		556E4F761F997A2B00506BF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = UniversalDetector;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -535,6 +542,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				556E4F771F997A2B00506BF3 /* PBXTargetDependency */,
 			);
 			name = UniversalDetectorSwift;
 			productName = UniversalDetectorSwift;
@@ -753,6 +761,11 @@
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* UniversalDetector */;
 			targetProxy = 5518C6DA1BDAFDCC00D50302 /* PBXContainerItemProxy */;
+		};
+		556E4F771F997A2B00506BF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* UniversalDetector */;
+			targetProxy = 556E4F761F997A2B00506BF3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

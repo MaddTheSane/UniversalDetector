@@ -6,7 +6,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// In this case, only -encoding wll be valid and -MIMECharset will be invalid.
 extern NSString * const	UniversalDetectorUseMacRomanHeuristic;
 
-typedef NS_OPTIONS(signed char, UDLanguageFilter) {
+typedef NS_OPTIONS(uint32_t, UDLanguageFilter) {
 	UDLanguageChineseSimplified = 1 << 0,
 	UDLanguageChineseTraditional = 1 << 1,
 	UDLanguageJapanese = 1 << 2,
