@@ -167,7 +167,9 @@ public:
 
 -(void)analyzeData:(NSData *)data
 {
-	[self analyzeBytes:(const char *)[data bytes] length:(int)[data length]];
+	[data enumerateByteRangesUsingBlock:^(const void * _Nonnull bytes, NSRange byteRange, BOOL * _Nonnull stop) {
+		[self analyzeBytes:(const char *)bytes length:(int)byteRange.length];
+	}];
 }
 
 -(void)analyzeBytes:(const char *)data length:(int)len
