@@ -223,6 +223,10 @@ public:
 
 -(BOOL)done
 {
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		NSLog(@"-[UniversalDetector done] was called. This method is deprecated. use -isDone instead. This message will only show up once.");
+	});
 	//deprecated, do not use
 	return [self isDone];
 }
