@@ -167,7 +167,9 @@ public:
 
 -(void)analyzeData:(NSData *)data
 {
-	[self analyzeBytes:(const char *)[data bytes] length:(int)[data length]];
+	[data enumerateByteRangesUsingBlock:^(const void * _Nonnull bytes, NSRange byteRange, BOOL * _Nonnull stop) {
+		[self analyzeBytes:(const char *)bytes length:(int)byteRange.length];
+	}];
 }
 
 -(void)analyzeBytes:(const char *)data length:(int)len
@@ -221,6 +223,10 @@ public:
 
 -(BOOL)done
 {
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		NSLog(@"-[UniversalDetector done] was called. This method is deprecated. use -isDone instead. This message will only show up once.");
+	});
 	//deprecated, do not use
 	return [self isDone];
 }
