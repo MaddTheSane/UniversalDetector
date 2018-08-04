@@ -88,7 +88,7 @@ $(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.m
 
 $(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.mm
 	@mkdir -p $(dir $@)
-	$(OBJCXX) $(ALL_OBJCXXFLAGS) $(AUTODEPENDENCY_CFLAGS) -c $< -o $@
+	$(OBJCXX) $(ALL_OBJCXXFLAGS) -fobjc-arc $(AUTODEPENDENCY_CFLAGS) -c $< -o $@
 
 $(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.cpp
 	@mkdir -p $(dir $@)
