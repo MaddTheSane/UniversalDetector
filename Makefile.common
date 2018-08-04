@@ -1,8 +1,6 @@
 # Source files
 
-LIBRARY_OBJC_FILES =	UniversalDetector.m
-
-LIBRARY_C_FILES =	universalchardet/kludge.c
+LIBRARY_OBJCXX_FILES =	UniversalDetector.mm
 
 LIBRARY_CXX_FILES =	WrappedUniversalDetector.cpp \
 			universalchardet/CharDistribution.cpp \
@@ -35,8 +33,7 @@ DETECTORTEST_OBJC_FILES = DetectorTest.m
 
 # Object files
 
-LIBRARY_OBJS = 		$(LIBRARY_OBJC_FILES:%.m=$(BUILD_DIR)/%.o) \
-			$(LIBRARY_C_FILES:%.c=$(BUILD_DIR)/%.o) \
+LIBRARY_OBJS = 		$(LIBRARY_OBJCXX_FILES:%.mm=$(BUILD_DIR)/%.o) \
 			$(LIBRARY_CXX_FILES:%.cpp=$(BUILD_DIR)/%.o)
 
 DETECTORTEST_OBJS =	$(DETECTORTEST_OBJC_FILES:%.m=$(BUILD_DIR)/%.o)

@@ -1,6 +1,7 @@
 # Compilers and linkers
 
 OBJCC = gcc
+OBJCXX = gcc
 CC = gcc
 CXX = g++
 LD = gcc
@@ -34,6 +35,7 @@ AUTODEPENDENCY_CFLAGS=-MMD -MF$(@:.o=.d) -MT$@
 ALL_OBJCFLAGS = $(OBJC_OPTS) $(GCC_OPTS) $(GNUSTEP_OPTS) $(OBJCFLAGS)
 ALL_CFLAGS = $(C_OPTS) $(GCC_OPTS) $(CFLAGS)
 ALL_CXXFLAGS = $(CXX_OPTS) $(GCC_OPTS) $(CXXFLAGS)
+ALL_OBJCXXFLAGS = $(CXX_OPTS) $(GCC_OPTS) $(GNUSTEP_OPTS) $(CXXFLAGS) $(OBJCFLAGS)
 
 # Options for linking
 
@@ -74,7 +76,7 @@ clean:
 
 # Suffix rules
 
-.SUFFIXES: .o .c .m .cpp
+.SUFFIXES: .o .c .m .mm .cpp
 
 $(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.c
 	@mkdir -p $(dir $@)
@@ -83,6 +85,10 @@ $(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.c
 $(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.m
 	@mkdir -p $(dir $@)
 	$(OBJCC) $(ALL_OBJCFLAGS) $(AUTODEPENDENCY_CFLAGS) -c $< -o $@
+
+$(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.mm
+	@mkdir -p $(dir $@)
+	$(OBJCXX) $(ALL_OBJCXXFLAGS) $(AUTODEPENDENCY_CFLAGS) -c $< -o $@
 
 $(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.cpp
 	@mkdir -p $(dir $@)
