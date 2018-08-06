@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UniversalDetector
 
 extension UniversalDetector {
 	public var encoding: String.Encoding? {
