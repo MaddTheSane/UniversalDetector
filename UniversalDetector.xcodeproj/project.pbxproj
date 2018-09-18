@@ -97,13 +97,13 @@
 /* Begin PBXFileReference section */
 		1B0DDB140A2CB1B20009B697 /* ChardetInterface.htm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = ChardetInterface.htm; sourceTree = "<group>"; };
 		1B0DDB150A2CB1B20009B697 /* UniversalCharsetDetection.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = UniversalCharsetDetection.doc; sourceTree = "<group>"; };
-		1B0DDB190A2CB1B30009B697 /* Big5Freq.tab */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Big5Freq.tab; sourceTree = "<group>"; };
+		1B0DDB190A2CB1B30009B697 /* Big5Freq.tab */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; path = Big5Freq.tab; sourceTree = "<group>"; };
 		1B0DDB1A0A2CB1B30009B697 /* CharDistribution.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = CharDistribution.cpp; sourceTree = "<group>"; };
 		1B0DDB1B0A2CB1B30009B697 /* CharDistribution.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CharDistribution.h; sourceTree = "<group>"; };
-		1B0DDB1C0A2CB1B30009B697 /* EUCKRFreq.tab */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = EUCKRFreq.tab; sourceTree = "<group>"; };
-		1B0DDB1D0A2CB1B30009B697 /* EUCTWFreq.tab */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = EUCTWFreq.tab; sourceTree = "<group>"; };
-		1B0DDB1E0A2CB1B30009B697 /* GB2312Freq.tab */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = GB2312Freq.tab; sourceTree = "<group>"; };
-		1B0DDB1F0A2CB1B30009B697 /* JISFreq.tab */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = JISFreq.tab; sourceTree = "<group>"; };
+		1B0DDB1C0A2CB1B30009B697 /* EUCKRFreq.tab */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; path = EUCKRFreq.tab; sourceTree = "<group>"; };
+		1B0DDB1D0A2CB1B30009B697 /* EUCTWFreq.tab */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; path = EUCTWFreq.tab; sourceTree = "<group>"; };
+		1B0DDB1E0A2CB1B30009B697 /* GB2312Freq.tab */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; path = GB2312Freq.tab; sourceTree = "<group>"; };
+		1B0DDB1F0A2CB1B30009B697 /* JISFreq.tab */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; path = JISFreq.tab; sourceTree = "<group>"; };
 		1B0DDB200A2CB1B30009B697 /* JpCntx.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = JpCntx.cpp; sourceTree = "<group>"; };
 		1B0DDB210A2CB1B30009B697 /* JpCntx.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = JpCntx.h; sourceTree = "<group>"; };
 		1B0DDB220A2CB1B30009B697 /* LangBulgarianModel.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = LangBulgarianModel.cpp; sourceTree = "<group>"; };
