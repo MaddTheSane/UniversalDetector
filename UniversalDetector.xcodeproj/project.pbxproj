@@ -63,7 +63,6 @@
 		1B467B1D15CD9B1F001AB1DD /* nsSJISProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDB450A2CB1B30009B697 /* nsSJISProber.cpp */; };
 		1B467B1E15CD9B1F001AB1DD /* nsUniversalDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDB4B0A2CB1B30009B697 /* nsUniversalDetector.cpp */; };
 		1B467B1F15CD9B1F001AB1DD /* nsUTF8Prober.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDB4D0A2CB1B30009B697 /* nsUTF8Prober.cpp */; };
-		1B467B2015CD9B1F001AB1DD /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1B467B2115CD9B1F001AB1DD /* kludge.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDC510A2CDA3D0009B697 /* kludge.c */; };
 		1B91CBC011D821A70081E40A /* UniversalDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDC740A2CDD2E0009B697 /* UniversalDetector.mm */; };
 		1B91CBC111D821A70081E40A /* CharDistribution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDB1A0A2CB1B30009B697 /* CharDistribution.cpp */; };
@@ -91,7 +90,6 @@
 		1B91CBD711D821A70081E40A /* nsSJISProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDB450A2CB1B30009B697 /* nsSJISProber.cpp */; };
 		1B91CBD811D821A70081E40A /* nsUniversalDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDB4B0A2CB1B30009B697 /* nsUniversalDetector.cpp */; };
 		1B91CBD911D821A70081E40A /* nsUTF8Prober.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDB4D0A2CB1B30009B697 /* nsUTF8Prober.cpp */; };
-		1B91CBDA11D821A70081E40A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1B91CBDB11D821A70081E40A /* kludge.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DDC510A2CDA3D0009B697 /* kludge.c */; };
 		3D724E301174182900CD3CBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D724E2F1174182900CD3CBD /* Foundation.framework */; };
 		3D724E4E11741AEE00CD3CBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D724E2F1174182900CD3CBD /* Foundation.framework */; };
@@ -734,7 +732,6 @@
 				1B467B1D15CD9B1F001AB1DD /* nsSJISProber.cpp in Sources */,
 				1B467B1E15CD9B1F001AB1DD /* nsUniversalDetector.cpp in Sources */,
 				1B467B1F15CD9B1F001AB1DD /* nsUTF8Prober.cpp in Sources */,
-				1B467B2015CD9B1F001AB1DD /* (null) in Sources */,
 				1B467B2115CD9B1F001AB1DD /* kludge.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -769,7 +766,6 @@
 				1B91CBD711D821A70081E40A /* nsSJISProber.cpp in Sources */,
 				1B91CBD811D821A70081E40A /* nsUniversalDetector.cpp in Sources */,
 				1B91CBD911D821A70081E40A /* nsUTF8Prober.cpp in Sources */,
-				1B91CBDA11D821A70081E40A /* (null) in Sources */,
 				1B91CBDB11D821A70081E40A /* kludge.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -871,6 +867,7 @@
 		1B0DDCAF0A2D0AFD0009B697 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -893,6 +890,7 @@
 		1B0DDCB00A2D0AFD0009B697 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1090,6 +1088,7 @@
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -1141,6 +1140,7 @@
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -1188,7 +1188,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CODE_SIGN_IDENTITY = "-";
@@ -1219,7 +1218,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CODE_SIGN_IDENTITY = "-";
@@ -1246,7 +1244,6 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_PREFIX = lib;
@@ -1269,7 +1266,6 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
