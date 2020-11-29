@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension UniversalDetector {
-	public var encoding: String.Encoding? {
+public extension UniversalDetector {
+	var encoding: String.Encoding? {
 		let enc = __encoding
 		if enc == 0 {
 			return nil
