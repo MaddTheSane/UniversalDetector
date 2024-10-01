@@ -142,7 +142,10 @@ public:
 
 -(instancetype)init
 {
-	return self = [self initWithFilter:UDLanguageAll];
+	if (self = [self initWithFilter:UDLanguageAll]) {
+		
+	}
+	return self;
 }
 
 -(void)dealloc
